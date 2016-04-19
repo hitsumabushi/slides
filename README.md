@@ -1,4 +1,5 @@
 # Slides
 
-* [golang concurrency](http://slides.hitsumabushi.org/?golang-concurrency)
+* [test](http://hitsumabushi.github.io/slides/?test)
+* [golang concurrency](http://hitsumabushi.github.io/slides/?golang-concurrency)
 
