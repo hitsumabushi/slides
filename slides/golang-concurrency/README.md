@@ -52,11 +52,6 @@ https://play.golang.org/p/4Egh1sURy-
 
 ---
 
-## 安心なcontext
-
-* ロックは取らなくて良いが、矛盾のない値アクセスが必要な場合に使う
-
----
 
 ## 練習: Singleton
 
@@ -64,3 +59,9 @@ https://play.golang.org/p/4Egh1sURy-
 * sync.Once を使って、Singleton パターンを実装してみよう
 
 <https://play.golang.org/p/KEkH3pYcJX>
+
+---
+
+## 自習: Context
+
+context パッケージを調べ、使ってみよう
