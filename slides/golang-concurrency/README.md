@@ -39,7 +39,7 @@ https://play.golang.org/p/4Egh1sURy-
 
 ## channel
 
-![](./golang-concurrency/channel.svg)
+![](slides/golang-concurrency/channel.svg)
 
 ---
 
