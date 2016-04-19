@@ -1,7 +1,7 @@
 class: center,middle
 # Test
 
-@higebu
+@author
 
 ---
 
