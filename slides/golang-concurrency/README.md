@@ -49,6 +49,9 @@ https://play.golang.org/p/4Egh1sURy-
 * ロックを取って全体としてatomicに見えるような操作を行うか、atomicな操作を行うか
 * [ダメな例 - sync.Mutex](https://play.golang.org/p/3PbZjNn2Eo), [ダメな例 - sync/atomic](https://play.golang.org/p/tEdpP2SWHm)
 * [良い例 - sync.Mutex](https://play.golang.org/p/aFsY4xVBVB), [良い例2 - sync/atomic](https://play.golang.org/p/WR-LKqGjwz)
+* go コマンドに競合を見つけてくれるオプション `-race` がある
+  * [Data Race Detector](https://golang.org/doc/articles/race_detector.html)
+  * e.g.) `$ go test -race mypkg`
 
 ---
 
