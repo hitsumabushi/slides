@@ -4,7 +4,62 @@ class: center,middle
 
 ---
 
-## 並行処理の確認
+## 並行性と並列性
+
+定義はいろいろあるようだけど、[Rob Pikeに従う](https://talks.golang.org/2012/waza.slide#1)ことにする。
+(このスライドはgopherがかわいいので、一読の価値がある)
+
+* 並行性(Concurrency)
+    * `Programming as the composition of independently executing processes.`
+    * `Concurrency is about dealing with lots of things at once.`
+* 並列性(Parallelism)
+    * `Programming as the simultaneous execution of (possibly related) computations.`
+    * `Parallelism is about doing lots of things at once.`
+
+---
+
+## プロセス、スレッド
+
+詳しいことは、[詳解 Linuxカーネル の第3章](https://www.oreilly.co.jp/books/9784873113135/)を読むか、ソースを読むかしてほしい。
+とりあえず、以下のように理解しておけば良いことにする。
+
+* プロセス
+    * プログラムの実行単位で、カーネルがリソースを管理する単位
+    * カーネルはそれぞれのプロセスに対して、CPU, メモリ, etc...を割り当てる
+    * プロセスを生成するとき、forkされる
+* (ネイティブ)スレッド
+    * ここでは、とりあえず、軽量プロセスのこととしておく。
+    * 2つの軽量プロセスの間では、メモリの大部分などを共有できる
+
+--
+
+* 複数の処理を行う場合、プロセス→プロセスで切り替えるよりも、スレッド→スレッドの方が早い
+* 参考: http://d.hatena.ne.jp/naoya/20071010/1192040413
+
+---
+
+## 大量のスレッドを生成する場合の問題点
+
+スレッドの切り替えが軽い、とは言ってもネイティブスレッドの生成には、そこそこのリソースを使う。
+たとえば、[Man page of PTHREA\_CREATE](https://linuxjm.osdn.jp/html/LDP_man-pages/man3/pthread_create.3.html) を見ると、スタックサイズのデフォルトは2MBになっている。
+
+つまり、C10K問題にあるような、同時に10000スレッドを生成しようと思うと、20GB程度使うことになる。
+
+---
+
+## Golang での並行処理の実装の特徴
+
+* CSP ベースの実装
+    * Channel経由で処理間の通信を行う、message passingで頑張る
+    * [This is the Go model and (like Erlang and others) it's based on CSP](https://talks.golang.org/2012/waza.slide#10)
+* Goroutine と呼ばれる、ユーザースペースに実装されたユーザースレッド。
+    * 1 goroutineあたり、数KBで生成できると説明されている。
+    * [Goroutines are multiplexed onto OS threads as required](https://talks.golang.org/2012/waza.slide#32)
+    * [Why goroutines instead of threads?](https://golang.org/doc/faq#goroutines)
+
+---
+
+## golangで並行処理を考えるのに便利なもの
 
 1. goroutine      : 軽量スレッドで非同期に処理を行う方法
 2. channel        : 非同期処理間で値をやり取りする方法
