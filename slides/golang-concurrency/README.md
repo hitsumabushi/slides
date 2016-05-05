@@ -43,15 +43,25 @@ https://play.golang.org/p/4Egh1sURy-
 
 ---
 
+## 複数のchannelとやりとりをする
+
+`select`を利用する。
+
+https://play.golang.org/p/m8r2gIpYo3
+
+---
+
 ## atomic に操作をする
 
 * 同一のリソースへアクセスする場合に、複数のgoroutineからアクセスすると齟齬がでる場合がある
-* ロックを取って全体としてatomicに見えるような操作を行うか、atomicな操作を行うか
-* [ダメな例 - sync.Mutex](https://play.golang.org/p/3PbZjNn2Eo), [ダメな例 - sync/atomic](https://play.golang.org/p/tEdpP2SWHm)
-* [良い例 - sync.Mutex](https://play.golang.org/p/aFsY4xVBVB), [良い例2 - sync/atomic](https://play.golang.org/p/WR-LKqGjwz)
+    * これを防ぐには、ある処理を行う場合、他の処理から見たときに、中間状態が見えないようにするという手法が考えられる
+* ロックを取って全体としてatomicに見えるような操作を行う
+    * [ダメな例 - sync.Mutex](https://play.golang.org/p/3PbZjNn2Eo), [良い例 - sync.Mutex](https://play.golang.org/p/aFsY4xVBVB)
+* atomicな操作だけを行うか
+    * [ダメな例 - sync/atomic](https://play.golang.org/p/tEdpP2SWHm), [良い例 - sync/atomic](https://play.golang.org/p/WR-LKqGjwz)
 * go コマンドに競合を見つけてくれるオプション `-race` がある
-  * [Data Race Detector](https://golang.org/doc/articles/race_detector.html)
-  * e.g.) `$ go test -race mypkg`
+    * [Data Race Detector](https://golang.org/doc/articles/race_detector.html)
+    * e.g.) `$ go test -race mypkg`
 
 ---
 
@@ -59,9 +69,9 @@ https://play.golang.org/p/4Egh1sURy-
 ## 練習: Singleton
 
 * [この例ではSingletonパターンを実装したいと考えている](https://play.golang.org/p/RpJDe5AS0_)。実装のだめなところを見つけ、競合するように修正してみよう
+    * まずは、`go run -race ...`してみる
+    * [回答例](https://play.golang.org/p/KEkH3pYcJX)
 * sync.Once を使って、Singleton パターンを実装してみよう
-
-<https://play.golang.org/p/KEkH3pYcJX>
 
 ---
 
