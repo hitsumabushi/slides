@@ -1,0 +1,22 @@
+name: export-pdf
+on:
+  push:
+    branches: [ gh-pages ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Change permission
+        run: chmod 777 -R marp/pdfs
+      - name: Export PDF
+        uses: ./.github/actions/marp/export-pdf
+        with:
+          args: "-c marprc.yml"
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: PDF
+          path: marp/pdfs
