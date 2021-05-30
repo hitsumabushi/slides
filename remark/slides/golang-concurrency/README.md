@@ -94,7 +94,7 @@ https://play.golang.org/p/4Egh1sURy-
 
 ## channel
 
-![](slides/golang-concurrency/channel.svg)
+![](slides/remark/golang-concurrency/channel.svg)
 
 ---
 
