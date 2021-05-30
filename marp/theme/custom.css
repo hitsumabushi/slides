@@ -1,0 +1,41 @@
+/* @theme custom */
+
+@import 'default';
+
+/* 全体の調整 */
+section {
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", "Noto Sans CJK JP", sans-serif;
+    background-color: rgb(247, 247, 247);
+}
+section {
+    font-size: 32px;
+    padding: 40px;
+}
+
+/* title スライドの調整 */
+section.title {
+    font-size: 36px;
+    text-align: center;
+    padding: 40px;
+}
+
+section.title h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+/* title スライド以外の調整 */
+section:not(.title) {
+    justify-content: start;
+}
+
+section:not(.title)>h2 {
+    margin-top: 20px;
+}
+
+/* その他の細かい調整 */
+/* 強調にアンダーラインを引く */
+section p>strong {
+    border-bottom: 3px solid red;
+    font-weight: 800;
+}
