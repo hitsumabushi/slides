@@ -14,7 +14,7 @@ jobs:
       - name: Export PDF
         uses: ./.github/actions/marp/export-pdf
         with:
-          args: "-c marprc.yml"
+          args: "-c .marprc.yml"
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
         with:
