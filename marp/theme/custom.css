@@ -8,7 +8,7 @@ section {
     background-color: rgb(247, 247, 247);
 }
 section {
-    font-size: 32px;
+    font-size: 28px;
     padding: 40px;
 }
 
@@ -25,17 +25,25 @@ section.title h1 {
 }
 
 /* title スライド以外の調整 */
+section:not(.title) h2 {
+    font-size: 40px;
+}
+
+
+/* 各セクションタイトルの位置 */
+/*
 section:not(.title) {
     justify-content: start;
 }
 
 section:not(.title)>h2 {
-    margin-top: 20px;
+    margin-top: 30px;
 }
+*/
 
 /* その他の細かい調整 */
 /* 強調にアンダーラインを引く */
 section p>strong {
     border-bottom: 3px solid red;
-    font-weight: 800;
+    font-weight: 600;
 }
