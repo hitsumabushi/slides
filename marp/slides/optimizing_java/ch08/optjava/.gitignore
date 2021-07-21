@@ -1,0 +1,11 @@
+.*.swp
+*~
+.*~
+# IntelliJ
+.idea
+*.iml
+
+# java
+*
+!*.java
+!.gitignore
