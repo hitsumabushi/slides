@@ -47,3 +47,12 @@ section p>strong {
     border-bottom: 3px solid red;
     font-weight: 600;
 }
+
+section p img[alt~="center"] {
+    display: block;
+    margin: 0 auto;
+}
+
+section > ul {
+    line-height: 1.2;
+}
