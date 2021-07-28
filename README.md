@@ -10,3 +10,4 @@
 * [test](https://hitsumabushi.github.io/slides/marp/slides/sample/README.html)
 * Optimizing Java
     * [Chapter 4](https://hitsumabushi.github.io/slides/marp/slides/optimizing_java/ch04.html)
+    * [Chapter 8](https://hitsumabushi.github.io/slides/marp/slides/optimizing_java/ch08.html)
