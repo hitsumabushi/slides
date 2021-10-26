@@ -11,3 +11,4 @@
 * Optimizing Java
     * [Chapter 4](https://hitsumabushi.github.io/slides/marp/slides/optimizing_java/ch04.html)
     * [Chapter 8](https://hitsumabushi.github.io/slides/marp/slides/optimizing_java/ch08.html)
+    * [Chapter 12](https://hitsumabushi.github.io/slides/marp/slides/optimizing_java/ch12.html)
