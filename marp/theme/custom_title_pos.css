@@ -1,0 +1,20 @@
+/* @theme custom_title_pos */
+
+@import 'custom';
+
+
+/* 各セクションタイトルの位置 */
+section:not(.title) {
+    justify-content: start;
+}
+
+section:not(.title)>h2,
+section:not(.title)>h3 {
+    position: absolute;
+    top: 10%;
+}
+
+section:not(.title)>h2+*,
+section:not(.title)>h3+* {
+    margin-top: 10%;
+}

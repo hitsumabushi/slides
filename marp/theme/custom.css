@@ -26,7 +26,7 @@ section.title h1 {
 
 /* title スライド以外の調整 */
 section:not(.title) h2 {
-    font-size: 40px;
+    font-size: 1.5rem;
 }
 
 

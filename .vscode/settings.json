@@ -1,6 +1,7 @@
 {
     "markdown.marp.themes": [
         "/home/hitsu/Documents/slides/marp/theme/custom.css",
-        "./marp/theme/custom.css"
+        "./marp/theme/custom.css",
+        "./marp/theme/custom_title_pos.css"
     ]
 }
