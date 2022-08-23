@@ -1,4 +1,4 @@
-FROM marpteam/marp-cli:v0.17.0
+FROM marpteam/marp-cli:latest
 
 USER root
 
