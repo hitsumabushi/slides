@@ -4,4 +4,4 @@ output: "./marp/pdfs"
 pdf: true
 lang: ja_JP
 html: true
-theme: "./marp/theme/custom.css"
+themeSet: "./marp/theme/"
