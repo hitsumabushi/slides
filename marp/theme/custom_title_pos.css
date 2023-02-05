@@ -16,5 +16,5 @@ section:not(.title)>h3 {
 
 section:not(.title)>h2+*,
 section:not(.title)>h3+* {
-    margin-top: 10%;
+    margin-top: 3.3rem;
 }
